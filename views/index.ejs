@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+</head>
+<body>
+    <header>
+        <%- include("./partials/navbar") %>
+    </header>
+    
+    <main>
+        <div id="editorbox">
+            <textarea id="editor"></textarea>
+        </div>
+
+
+        <div id="popup-terminals">
+            <button onclick="popup_onoff('input-box')" class="round-btns"><i class="bi bi-terminal-plus"></i></button>
+            <button onclick="popup_onoff('popup-terminals')" id="close-btn" class="round-btns"><i class="bi bi-x-lg"></i></button>
+            <div>
+                <div id="output-box">
+                    <h3>Output Terminal</h3>
+                    <textarea spellcheck="false" class="terminal" id="output-terminal"></textarea>
+                </div>
+    
+                <div id="input-box">
+                    <h3>Input Terminal</h3>
+                    <textarea spellcheck="false" class="terminal" id="input-terminal"></textarea>
+                </div>
+    
+            </div>
+
+        </div>
+
+        <div id="popup-settings">
+            <h3>Settings Panel</h3>
+            
+            <div class="panel-settings">
+                <label for="langName">Editor Language</label>
+                <select name="select language" id="langName">
+                    <option value="c_cpp">C/C++</option>
+                    <option value="python">Python</option>
+                    <option value="java">JAVA</option>
+                    <option value="c#">C#</option>
+
+                </select>
+
+                <label for="themeName">Editor Theme</label>
+                <select name="select theme" id="themeName">
+                    <option value="dracula">Dracula</option>
+                    <option value="eclipse">Eclipse</option>
+                    <option value="duotone-light">Duotone Light</option>
+                    <option value="rubyblue">Ruby Blue</option>
+                    <option value="twilight">Twilight</option>
+                </select>
+
+                <label for="editor-fonts">Font Size</label>
+                <select name="editorfonts" id="editor-fonts">
+                    <option value="s">Small</option>
+                    <option value="m">Medium</option>
+                    <option value="l">Large</option>
+                    <option value="d">Default</option>
+                </select>
+
+                <button id="save-changes"><i class="bi bi-check-lg"></i>Save Changes</button>
+            </div>
+
+        </div>
+
+        <div id="popup-messageBox">
+            <button class="closeBtn"><i class="bi bi-x"></i></button>
+            <p>
+                Your program is under Compilation
+            </p>
+        </div>
+    
+    </main>
+  
+    <script type="text/javascript" src="./js/editor.js"></script>
+    <footer>
+
+    </footer>
+    
+</body>
+</html>
